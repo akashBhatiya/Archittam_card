@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <section style="margin: 0;">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap');
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins','sans-serif';
+            }
+
+            .card-container{
+                display: flex;
+                width: 100%;
+                overflow-x: scroll;
+            }
+
+            .card-container::-webkit-scrollbar {    
+                height: 3px;
+            }
+            
+            .card-container:hover::-webkit-scrollbar-thumb{
+                background-color:#333;
+            }
+
+
+            .card-container .card{
+                width: 200px;
+                text-align: center;
+                margin: 1rem;
+                color: #3c3c3c;
+            }
+
+            .card-container .card .img-container{
+                width: 200px;
+                height: 250px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .card-container .card img{
+                width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+                vertical-align: middle;
+            }
+
+            .card-container .card .star-container{
+                color: orange;
+                font-size: 1.2rem;
+            }
+
+            .card-container .card h4{
+                font-size: 1rem;
+                margin: 5px 0;
+            }
+
+            .card-container .card p{
+                font-size: 0.8rem;
+                font-weight: 400;
+            }
+
+            @media screen and (min-width:950px) {
+                .card-container{
+                    justify-content: center;
+                }
+                .card-container .card{
+                    margin: 1rem 2rem;
+                }
+            }
+        </style>
+        <div class="card-container" id="cd-cnt">
+        </div>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script>
+            let dataBase = [
+                {
+                    img: "https://cdn.shopify.com/s/files/1/0615/1962/6461/files/i2.jpg?v=1688657295",
+                    name: "Rana Trafdar",
+                    rating: '<ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>',
+                    des: "this is really amazing, i m really happy and satisfied. thank you."
+                },
+                {
+                    img: "https://cdn.shopify.com/s/files/1/0615/1962/6461/files/i1.jpg?v=1688657297",
+                    name: 'Ashutosh Bajpai',
+                    rating: '<ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon>',
+                    des: "Wonderful experience.... Price worthy product..."
+                },
+                {
+                    img: "https://cdn.shopify.com/s/files/1/0615/1962/6461/files/WhatsApp_Image_2023-08-08_at_09.34.55.jpg?v=1691467598",
+                    name: 'Jaggaraju B.V',
+                    rating: '<ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>',
+                    des: "Best deal with this price segments.....I like this ....."
+                },
+                {
+                    img: "https://cdn.shopify.com/s/files/1/0615/1962/6461/files/WhatsApp_Image_2023-08-08_at_09.31.53.jpg?v=1691467599",
+                    name: "Bhavin Vaghela",
+                    rating: '<ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>',
+                    des: "Nice 👍"
+                }
+            ];
+
+            const container = document.getElementById('cd-cnt');
+
+            dataBase.forEach((x)=>{
+                container.innerHTML += `
+                    <div class="card">
+                        <div class="img-container"><img src="${x.img}" alt=""></div>
+                        <h4>${x.name}</h4>
+                        <span class="star-container">
+                            ${x.rating}
+                        </span>
+                        <p>${x.des}</p>
+                    </div>
+                `;
+
+            });
+        </script>
+    </section>
+</body>
+</html>
